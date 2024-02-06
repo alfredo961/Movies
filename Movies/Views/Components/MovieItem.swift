@@ -11,8 +11,7 @@ import SwiftUI
 struct MovieCardView: View {
     var image:String
     var title:String
-    var rating:String
-    var action: () -> Void
+    var releaseDate:String
     
     var body: some View {
         VStack {
@@ -31,7 +30,7 @@ struct MovieCardView: View {
                 .frame(height: 20)
 
             
-            Text(rating)
+            Text(releaseDate)
                 .font(.subheadline)
                 .frame(height: 20)
         }
@@ -39,9 +38,7 @@ struct MovieCardView: View {
         .background(Color.white)
         .cornerRadius(10)
         .shadow(radius: 3)
-        .onTapGesture {
-            action()
-        }
+        
     }
 }
 

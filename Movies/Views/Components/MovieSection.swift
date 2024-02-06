@@ -14,11 +14,12 @@ struct MovieSection: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(movies) { movie in
-                    MovieCardView(image: movie.posterPath ?? "",
-                                  title: movie.title!,
-                                  rating: String(movie.voteAverage)) {
-                        print("Película seleccionada: ", movie.title!)
-                    }
+                    let image = Image("placeholder")
+                    NavigationLink(destination: MovieDetail(movie: movie, image: image, video: <#T##Video#>)) {
+                                            MovieCardView(image: movie.posterPath ?? "",
+                                            title: movie.title!,
+                                            releaseDate: movie.releaseDate!)
+                                        }
                 }
             }
         }
